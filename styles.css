@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=Roboto&display=swap');
+body{
+    background: #f0db4f;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #323330;
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    animation: fontbulger 1s 2s 3 alternate backwards;
+}
+
+@keyframes fontbulger {
+    from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
