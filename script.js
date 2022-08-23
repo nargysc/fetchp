@@ -1,17 +1,12 @@
-/*
-axios.post('https://dummyjson.com/users',
-{
-    name:"Terry",
-    age:"50",
-    gender:"Male"
-})
-.then((res) => console.log((res))
-.catch((err) => console.log(err)))
-*/
+const getUsernames = async (url) => {
+    const response = await fetch(url).then((response) => response.json());
+    const usernameList = [];
+    for (let i = 0; i < response.users.length; i++) {
+        if (response.users[i].hasOwnProperty('username')) {
+            usernameList.push(response.users[i].username);
+        }
+    }
+    return usernameList;
+}
 
-
-const url = 'https://dummyjson.com/users';
-axios(url).then(response => {
-    console.log('response', response.data
-    );
-});
+getUsernames('https://dummyjson.com/users').then((data) => console.log(data));
